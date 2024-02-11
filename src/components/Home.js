@@ -140,11 +140,11 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
                         <div>
                             {(account === inspector) ? (
                                 <button className='home__buy' onClick={inspectHandler} disabled={hasInspected}>
-                                    Approve By Groverment
+                                    Approve By LR Office
                                 </button>
                             ) : (account === lender) ? (
                                 <button className='home__buy' onClick={lendHandler} disabled={hasLended}>
-                                    Approve By Register
+                                    Approve By UL Office
                                 </button>
                             ) : (account === seller) ? (
                                 <button className='home__buy' onClick={sellHandler} disabled={hasSold}>
