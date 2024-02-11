@@ -20,10 +20,10 @@ async function main() {
   await realEstate.deployed()
 
   console.log(`Deployed Real Estate Contract at: ${realEstate.address}`)
-  console.log(`Minting 17 properties...\n`)
+  console.log(`Minting 15 properties...\n`)
 
-  for (let i = 0; i < 17; i++) {
-    const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/QmUFSb8eiCBWMC8Ezk3gsZjmaiT6sVmyQmr7NB6kswCSTH/${i + 1}.json`)
+  for (let i = 0; i < 15; i++) {
+    const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/QmT2iuBVn1L98bs1YUBNyTqv2aFvYjrbFm1Ej6Eo5nAHe3/${i + 1}.json`)
     await transaction.wait()
   }
 
@@ -38,9 +38,9 @@ async function main() {
   await escrow.deployed()
 
   console.log(`Deployed Escrow Contract at: ${escrow.address}`)
-  console.log(`Listing 17 properties...\n`)
+  console.log(`Listing 15 properties...\n`)
 
-  for (let i = 0; i < 17; i++) {
+  for (let i = 0; i < 15; i++) {
     // Approve properties...
     let transaction = await realEstate.connect(seller).approve(escrow.address, i + 1)
     await transaction.wait()
@@ -80,23 +80,18 @@ async function main() {
   transaction = await escrow.connect(seller).list(11, buyer.address, tokens(180), tokens(70))
   await transaction.wait()
 
-  transaction = await escrow.connect(seller).list(12, buyer.address, tokens(175), tokens(70))
-  await transaction.wait()
+ transaction = await escrow.connect(seller).list(12, buyer.address, tokens(175), tokens(70))
+ await transaction.wait()
 
-  transaction = await escrow.connect(seller).list(13, buyer.address, tokens(170), tokens(65))
-  await transaction.wait()
+ transaction = await escrow.connect(seller).list(13, buyer.address, tokens(170), tokens(65))
+ await transaction.wait()
 
   transaction = await escrow.connect(seller).list(14, buyer.address, tokens(165), tokens(60))
   await transaction.wait()
 
   transaction = await escrow.connect(seller).list(15, buyer.address, tokens(160), tokens(55))
-  await transaction.wait()
+   await transaction.wait()
 
-  transaction = await escrow.connect(seller).list(16, buyer.address, tokens(155), tokens(50))
-  await transaction.wait()
-
-  transaction = await escrow.connect(seller).list(17, buyer.address, tokens(195), tokens(50))
-  await transaction.wait()
 
   console.log(`Finished.`)
 }

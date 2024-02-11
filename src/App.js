@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 
 // Components
 import Navigation from './components/Navigation';
-import Search from './components/Search';
+
 import Home from './components/Home';
 
 // ABIs
@@ -63,7 +63,7 @@ function App() {
   return (
     <div>
       <Navigation account={account} setAccount={setAccount} />
-      <Search />
+    
 
       <div className='cards__section'>
 
@@ -80,10 +80,10 @@ function App() {
               <div className='card__info'>
                 <h4>{home.attributes[0].value} ETH</h4>
                 <p>
-                  <strong>{home.attributes[2].value}</strong> bds |
-                  <strong>{home.attributes[3].value}</strong> ba |
-                  <strong>{home.attributes[4].value}</strong> sqft
-                </p>
+                        <strong>{home.attributes[2].value}</strong> Market Trends and Prices |
+                        <strong>{home.attributes[3].value}</strong> Mouza |
+                        <strong>{home.attributes[4].value}</strong> Daag/Plot no
+                    </p>
                 <p>{home.address}</p>
               </div>
             </div>
