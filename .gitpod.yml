@@ -1,6 +1,6 @@
 tasks:
   - name: Install, start node, and deploy
-    init: yarn
+    init: npm i
     command: npx hardhat node
   - name: Deploy smart contract and start server
     command: |
